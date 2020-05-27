@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Flash Cards</title>
+
+    <!-- handlebars -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- Google Fonts Comfortaa & Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- page js stuff -->
+    <script src="index.js" charset="utf-8" defer></script>
+
+    <!-- bootstrap style -->
+    <!-- link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" -->
+    <!-- page style -->
+    <link rel="stylesheet" href="style.css" media="screen">
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <a href="#"><h1 class="site-title">Flash Cards</h1></a>
+
+      <nav class="navbar">
+        <ul class="navlist">
+          <li class="navitem navlink"><a href="#">Home</a></li>
+          <li class="navitem navlink"><a href="#">Explore</a></li>
+          <li class="navitem navbar-search">
+            <input type="text" id="navbar-search-input" placeholder="Search...">
+            <button type="button" id="navbar-search-button"><!-- search button graphic --></button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content-container">
+
+      <!-- example deck -->
+      <article class="deck">
+        <div class="deck-content">
+          <a href="#linktodeck"><h1 class="deck-title">Deck Name</h1></a>
+          <p class="deck-description">Deck description here.</p>
+          <a href="#linktocategory"><p class="deck-category">Sports</p></a>
+        </div>
+      </article>
+
+      <!-- example flash card -->
+      <article class="fc">
+        <div class="fc-inner">
+          <div class="fc-front">
+            <img src="placeholder.jpg" class="fc-image">
+            <p class="fc-text">lorem ipsum dolor</p>
+          </div>
+          <div class="fc-back">
+            <p class="fc-text">What three words are commonly used in filler text?</p>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- index has description of application, how to use guide -->
+      <!-- explore should randomly select pre-made decks, with options to sort various ways -->
+      <!-- create flash cards lets you create your own deck -->
+      <!-- probably need to include some sweet modals y'know-->
+
+    </main>
+    <footer class="footer">
+      <h3 class="footer-text">Made May 2020 by Garrett Martin</h3>
+    </footer>
+
+  </body>
+</html>
