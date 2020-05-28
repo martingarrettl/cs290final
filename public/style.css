@@ -1,0 +1,109 @@
+/*
+ stylesheet for cs290 final project
+ Author(s): Garrett Martin
+ Date: 5/27/2020
+*/
+
+.title a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* nav stuff */
+
+.navbar {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.navlist {
+  margin: 0;
+  padding: 0;
+}
+
+.navitem {
+  display: block;
+}
+
+.navlink a {
+  color: #fff;
+}
+
+.navlink a:hover {
+  color: #319df6;
+  text-decoration: none;
+}
+
+/* search bar stuff */
+#navbar-search-input {
+  padding: 4px;
+  font-size: 16px;
+  background-color: #eee;
+  border: none;
+  border-radius: 12px;
+}
+
+#navbar-search-input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+#navbar-search-button {
+  margin-left: -5px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+#navbar-search-button:hover {
+  color: #319df6;
+}
+
+#navbar-search-button:focus {
+  color: #319df6;
+  outline: none;
+}
+
+/* flash card stuff */
+.fc {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.fc-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.fc:hover .fc-inner {
+  transform: rotateY(180deg);
+}
+
+.fc-front, .fc-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.fc-front {
+  background-color: #fbfff1ff;
+  color: #363537ff;
+  border: 1px solid #171614ff;
+}
+
+.fc-back {
+  background-color: #fbfff1ff;
+  color: #363537ff;
+  transform: rotateY(180deg);
+  border: 1px solid #171614ff;
+}
