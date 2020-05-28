@@ -4,6 +4,8 @@
   "description": "final project for OSU CS290 S20",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
     "handlebars": "^4.7.6"
   },
   "devDependencies": {},
