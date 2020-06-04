@@ -1,0 +1,66 @@
+
+//* EXAMPLE DECK *//
+
+{
+  title: "Skywalker Factz",
+  category: "scifi",
+  description: "i fukken love luke skywoker",
+  cards: [
+    {
+      title: "fact one",
+      backImage: "na",
+      frontImage: "na",
+      text: "this is the back of the card."
+    },
+    {
+      title: "fact one",
+      backImage: "na",
+      frontImage: "na",
+      text: "this is the back of the card."
+    },
+    {
+      title: "fact one",
+      backImage: "na",
+      frontImage: "na",
+      text: "this is the back of the card."
+    }
+  ]
+}
+
+// DB OPERATIONS
+
+db.decks.insertOne({
+  title: "Skywalker Factz",
+  category: "scifi",
+  description: "i fukken love luke skywoker",
+  cards: [
+    {
+      title: "fact one",
+      backImage: "na",
+      frontImage: "na",
+      text: "this is the back of the card."
+    },
+    {
+      title: "fact one",
+      backImage: "na",
+      frontImage: "na",
+      text: "this is the back of the card."
+    },
+    {
+      title: "fact one",
+      backImage: "na",
+      frontImage: "na",
+      text: "this is the back of the card."
+    }
+  ]
+});
+
+db.decks.updateOne(
+  { title: "Skywalker Factz" },
+  { $push: { cards: {
+    title: "fact one",
+    backImage: "na",
+    frontImage: "na",
+    text: "this is the back of the card."
+  }}}
+);
