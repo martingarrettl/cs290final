@@ -12,13 +12,6 @@ var exphbs = require('express-handlebars');
 //mongodb Atlas stuff
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://appaccess:F5exhv26ma8gL13s@cluster0-wu6cw.mongodb.net/decks?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -51,6 +44,13 @@ app.get("*", function (req, res) {
   res.status(404).render('404');
 });
 
-app.listen(port, function() {
-  console.log("== Server is listening on port ", port);
+const client = new MongoClient(uri, { useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+
+  app.listen(port, function() {
+    console.log("== Server is listening on port ", port);
+  });
 });
