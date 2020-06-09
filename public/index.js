@@ -23,22 +23,22 @@ window.addEventListener('DOMContentLoaded', function () {
     allTwits.push(parseTwitElem(twitElemsCollection[i]));
   }
 
-  var createTwitButton = document.getElementById('new-deck-button');
+  var createTwitButton = document.getElementById('create-deck-button');
   if (createTwitButton) {
     createTwitButton.addEventListener('click', showCreateDeckModal);
   }
 
-  var modalCloseButton = document.querySelector('#create-twit-modal .modal-close-button');
+  var modalCloseButton = document.querySelector('#create-deck-modal .modal-close-button');
   if (modalCloseButton) {
     modalCloseButton.addEventListener('click', hideCreateTwitModal);
   }
 
-  var modalCancelButton = document.querySelector('#create-twit-modal .modal-cancel-button');
+  var modalCancelButton = document.querySelector('#create-deck-modal .modal-cancel-button');
   if (modalCancelButton) {
     modalCancalButton.addEventListener('click', hideCreateTwitModal);
   }
 
-  var modalAcceptButton = document.querySelector('#create-twit-modal .modal-accept-button');
+  var modalAcceptButton = document.querySelector('#create-deck-modal .modal-accept-button');
   if (modalAcceptButton) {
     modalAcceptButton.addEventListener('click', handleModalAcceptClick);
   }

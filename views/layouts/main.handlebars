@@ -30,10 +30,12 @@
     {{> header}}
 
     <main class="container-fluid mt-0">
-      <div class="col-sm-1 bg-secondary rounded-bottom">
+      <div class="row">
         {{> nav}}
+        <div class"p-2 w-75">
+          {{{body}}}
+        </div>
       </div>
-        {{{body}}}
     </main>
 
   {{> footer}}
