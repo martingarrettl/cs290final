@@ -11,8 +11,7 @@ var exphbs = require('express-handlebars');
 
 //mongodb Atlas stuff
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://appaccess:F5exhv26ma8gL13s@cluster0-wu6cw.mongodb.net/decks?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useUnifiedTopology: true });
+const uri = process.env.MONGO_URI;
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -20,41 +19,53 @@ var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-app.use(express.static('public'));
+MongoClient.connect(uri, { useUnifiedTopology: true }).then(client => {
+  //connect to database, get database object, get collection object
+  console.log("== Connected to Database");
+  const db = client.db('cs290final');
+  const collection = db.collection('decks');
 
-app.get("/", function (req, res, next) {
-  res.status(200).render('index');
-});
+  app.use(express.static('public'));
 
-app.get("/decks", function (req, res, next) {
-  res.status(200).render('decks');
-});
-
-
-app.get("/decks/:deckId", function (req, res, next) {
-  let deck = db.collection('decks');
-  let deckCursor = collection.find({});
-
-  deckCursor.toArray(function (err, deckData) {
-    if (err) {
-      res.status(500).send("Error fetching decks from database.");
-    } else {
-      res.status(200).render('decks', deckData[deckId]);
-    }
+  app.get("/", function (req, res, next) {
+    res.status(200).render('index');
   });
-});
 
+  app.get("/decks", function (req, res, next) {
+    db.collection('decks').find().toArray().then(results => {
+      res.status(200).render('decks', results[0]);
+    }).catch(error => {
+      console.error(error);
+      res.status(500).render('500');
+    })
+  });
 
-app.get("*", function (req, res) {
-  res.status(404).render('404');
-});
+  app.get("/decks/:deckId", function (req, res, next) {
+    db.collection('decks').find().toArray().then(results => {
+      let deckid = req.params.deckId;
+      if (results[deckid]) {
+        res.status(200).render('decks', results[deckid]);
+      } else {
+        next();
+      }
+    }).catch(error => {
+      console.error(error);
+      res.status(500).render('500');
+    })
+  });
 
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
+  app.get("/decks/:deckId/edit", function (req, res, next) {
+
+  });
+
+  app.get("*", function (req, res) {
+    res.status(404).render('404');
+  });
+
 
   app.listen(port, function() {
     console.log("== Server is listening on port ", port);
   });
-});
+
+  //client.close();
+}).catch(error => console.error(error));

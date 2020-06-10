@@ -1,59 +1,69 @@
-
-//* EXAMPLE DECK *//
-
 {
-  title: "Skywalker Factz",
-  category: "scifi",
-  description: "i fukken love luke skywoker",
+  decktitle: "Skywalker Factz",
+  deckauthor: "starwars fan",
+  deckdesc: "All sorts of non-facts about star wars",
   cards: [
     {
-      title: "fact one",
-      backImage: "na",
-      frontImage: "na",
-      text: "this is the back of the card."
+      title: "fact two",
+      backtext: "n/a",
+      fronttext: "n/a",
     },
     {
       title: "fact one",
-      backImage: "na",
-      frontImage: "na",
-      text: "this is the back of the card."
+      backtext: "n/a",
+      fronttext: "n/a",
     },
     {
-      title: "fact one",
-      backImage: "na",
-      frontImage: "na",
-      text: "this is the back of the card."
+      title: "fact three",
+      backtext: "n/a",
+      fronttext: "n/a",
     }
   ]
 }
 
-// DB OPERATIONS
 
 db.decks.insertOne({
-  title: "Skywalker Factz",
-  category: "scifi",
-  description: "i fukken love luke skywoker",
+  decktitle: "Skywalker Factz",
+  deckauthor: "starwars fan",
+  deckdesc: "All sorts of non-facts about star wars",
   cards: [
     {
-      title: "fact one",
-      backImage: "na",
-      frontImage: "na",
-      text: "this is the back of the card."
+      title: "fact two",
+      backtext: "n/a",
+      fronttext: "n/a",
     },
     {
       title: "fact one",
-      backImage: "na",
-      frontImage: "na",
-      text: "this is the back of the card."
+      backtext: "n/a",
+      fronttext: "n/a",
     },
     {
-      title: "fact one",
-      backImage: "na",
-      frontImage: "na",
-      text: "this is the back of the card."
+      title: "fact three",
+      backtext: "n/a",
+      fronttext: "n/a",
     }
   ]
 });
+
+decktitle: "CS290 cards",
+deckauthor: "student",
+deckdesc: "Various flashcards to help solidify your CS290 knowledge",
+cards: [
+  {
+    title: "Cursor objects",
+    backtext: "What function would you call to turn a cursor object into an array?",
+    fronttext: "the toArray() function",
+  },
+  {
+    title: "CSS",
+    backtext: "What is the appropriate way to distinguish between an id and a class with css?",
+    fronttext: "ids are identified with a # symbol prepended and a class with a . prepended.",
+  },
+  {
+    title: "CS290 final project",
+    backtext: "If you space out and never signed up for a final project group is it a good idea to do the whole things by yourself and mention it to no one?",
+    fronttext: "Absolutely not!",
+  }
 
 db.decks.updateOne(
   { title: "Skywalker Factz" },

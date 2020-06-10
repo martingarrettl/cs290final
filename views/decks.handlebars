@@ -1,8 +1,14 @@
-<div class="col-sm-8">
-  <div class="row">
-    {{> deck}}
-
-    {{> createdeck}}
+<main class="deck-container">
+    <div class="row m-2">
+      <table>
+        <tr>
+          <th>Deck Name</th>
+          <th>Description</th>
+          <th>Author</th>
+        </tr>
+      {{> deck}}
+    </table>
   </div>
-</div>
-<button type="button" id="create-deck-button"><i class="far fa-plus-square"> Create New Deck</i></button>
+</main>
+
+{{> newdeckmodal}}
