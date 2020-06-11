@@ -1,0 +1,48 @@
+<div class="m-2">
+  <h3 class="">{{decktitle}}</h3>
+
+  <div class="input-element">
+    <label for="input-element">Description</label>
+    <textarea type="text" id="input-element" class="deckdesc">{{deckdesc}}</textarea>
+  </div>
+
+  <div class="deck-buttons">
+    <button type="button" id="addFlashCard" class="btn btn-danger" data-toggle="modal" data-target="#create-flashcard-modal">
+      <i class="fas fa-plus"> Flash Card</i>
+    </button>
+  </div>
+
+  <div class="modal fade" id="create-flashcard-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Flash Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="input-element">
+            <label for="input-element">Font Text</label>
+            <textarea type="text" id="input-element" class="fc-fronttext"></textarea>
+          </div>
+
+          <div class="input-element">
+            <label for="input-element">Back Text</label>
+            <textarea type="text" id="input-element" class="fc-backtext"></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="createDeck" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

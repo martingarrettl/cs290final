@@ -4,20 +4,13 @@
  * name: Garrett Martin
  * Email: martgarr@oregonstate.edu
  */
- function addFlashCard() {
-
-   var newFlashCard = '<br><div class="input-element"><label for="text-input">Front Text</label><input id="text-input"></input></div><div class="input-element"><label for="text-input">Back Text</label><input id="text-input"></input></div>';
-
-   var twitContainer = document.querySelector('.modal-body');
-   twitContainer.insertAdjacentHTML('beforeend', newFlashCard);
- }
 
 /*
  * UI interactions
  */
 window.addEventListener('DOMContentLoaded', function () {
 
-  
+
 
   let addFlashCardButton = document.getElementById('addflashcard');
   if (addFlashCardButton) {
@@ -37,8 +30,5 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   */
-
-
-
 
 });

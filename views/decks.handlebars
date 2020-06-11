@@ -1,4 +1,4 @@
-<main class="deck-container">
+<main class="deck-container w-50">
     <div class="row m-2">
       <table>
         <tr>
@@ -6,7 +6,9 @@
           <th>Description</th>
           <th>Author</th>
         </tr>
-      {{> deck}}
+        {{#each decks}}
+          {{> deck}}
+        {{/each}}
     </table>
   </div>
 </main>
