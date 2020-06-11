@@ -1,7 +1,6 @@
 <tr id="deck">
-  <td class="pr-2"><a href="/decks/{{@index}}">{{decktitle}}<a></td>
+  <td class="pr-2"><a href="/decks/{{@index}}" id="deck{{@index}}id">{{decktitle}}<a></td>
   <td class="w-50 pr-2">{{deckdesc}}</td>
   <td class="">{{deckauthor}}</td>
-  <td><button type="button" class="btn btn-secondary">edit</button></td>
-  <td><button type="button" class="btn btn-secondary">delete</button></td>
+  <td><a href="/decks/{{@index}}/edit" class="btn btn-primary">edit</a></td>
 </tr>

@@ -1,5 +1,5 @@
 <!-- button to trigger modal -->
-<button type="button" id="deckbutt" class="btn btn-danger" data-toggle="modal" data-target="#create-deck-modal">
+<button type="button" id="deckbutt" class="btn btn-danger m-2" data-toggle="modal" data-target="#create-deck-modal">
   <i class="fas fa-plus"> Create New Deck</i>
 </button>
 
@@ -17,25 +17,25 @@
       <div class="modal-body">
 
         <div class="input-element">
-          <label for="text-input">Name</label>
-          <input id="text-input" class="deckname"></input>
+          <label for="decktitle">Name</label>
+          <input id="decktitle" class="newdeckname"></input>
         </div>
 
         <div class="input-element">
-          <label for="text-input">Author</label>
-          <input id="text-input" class="deckauth"></input>
+          <label for="deckauthor">Author</label>
+          <input id="deckauthor" class="newdeckauth"></input>
         </div>
 
         <div class="input-element">
-          <label for="input-element">Description</label>
-          <textarea type="text" id="input-element" class="deckdesc">does this pre-load text?</textarea>
+          <label for="deckdesc">Description</label>
+          <textarea type="text" id="deckdesc" class="newdeckdesc"></textarea>
         </div>
 
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="createDeck" class="btn btn-primary">Save</button>
+        <button type="button" id="saveNewDeck" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
