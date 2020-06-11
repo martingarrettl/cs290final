@@ -47,12 +47,42 @@ function handleNewDeckModal() {
 }
 
 function handleNewFlashcardModal() {
-  //new flash card stuff here
+  let decktitle = document.getElementById('decktitle').innerText;
+  let cardtitle = document.getElementById('fctitle').value;
+  let backtext = document.getElementById('backtext').value;
+  let fronttext = document.getElementById('fronttext').value;
+
+  if (!cardtitle || !backtext || !fronttext) {
+    alert("Card title, front text and back text are all required.");
+  } else {
+    var request = new XMLHttpRequest();
+    var requestURL = "/decks/addFlashCard";
+    request.open('POST', requestURL);
+
+    var cardObj = {
+      decktitle: decktitle,
+      title: cardtitle,
+      backtext: backtext,
+      fronttext: fronttext
+    };
+
+    var requestBody = JSON.stringify(cardObj);
+    request.setRequestHeader('Content-Type', 'application/json');
+
+    request.addEventListener('load', function (event) {
+      if (event.target.status === 200) {
+        window.location.replace("/decks/" + getDeckId() + "/edit");
+      } else {
+        alert("error adding flashcard");
+      }
+    });
+
+    request.send(requestBody);
+  }
 }
 
 function handleDeleteDeckButton() {
   let decktitle = document.getElementById('decktitle').innerText;
-  console.log("in handle " + decktitle);
 
   var request = new XMLHttpRequest();
   var requestURL = "/decks/delete";
@@ -117,6 +147,11 @@ function clearRequiredForm() {
  */
 window.addEventListener('DOMContentLoaded', function () {
 
+  let saveNewFlashCard = document.getElementById('createFlashCard');
+  if (saveNewFlashCard) {
+    saveNewFlashCard.addEventListener('click', handleNewFlashcardModal);
+  }
+
   let deleteDeckButton = document.getElementById('deckdelete');
   if (deleteDeckButton) {
     deleteDeckButton.addEventListener('click', handleDeleteDeckButton);
@@ -134,7 +169,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
   let updateDeckButton = document.getElementById('updatebutt');
   if (updateDeckButton) {
-    console.log("yes it's there");
     updateDeckButton.addEventListener('click', storeEditInDB);
   }
 

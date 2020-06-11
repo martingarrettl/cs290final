@@ -5,7 +5,7 @@
 */
 
 body {
-  background: #fbfff1ff;
+  background: #e5eaf5;
 }
 
 table {
@@ -13,14 +13,22 @@ table {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #e1e8f0;
 }
 
 .title a {
   text-decoration: none;
   color: #fff;
 }
+/* header stuff */
+.header {
+  background-color: #a0d2eb;
+}
 
+/* footer stuff */
+.footer {
+  background-color: #8458B3;
+}
 /* nav stuff */
 
 .navbar {
@@ -88,9 +96,9 @@ tr:nth-child(even) {
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
+  width: 31%;
+  height: 175px;
+  border: none;
 }
 
 /* This container is needed to position the front and back side */
@@ -142,20 +150,12 @@ tr:nth-child(even) {
   height: 200px;
 }
 
-.deck-title {
-
-}
-
-.deck-content {
-
-}
-
-.deck-description {
-
-}
-
-.deck-category {
-
+.deckdesc textarea {
+  padding-left: 5px;
+  width: 200px;
+  height: 75px;
+  border: none;
+  resize: none;
 }
 
 .deck-footer li {

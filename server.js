@@ -92,6 +92,26 @@ MongoClient.connect(uri, { useUnifiedTopology: true }).then(client => {
     }
   });
 
+  app.post('/decks/addFlashCard', function (req, res, next) {
+    if (req.body && req.body.title && req.body.decktitle && req.body.backtext && req.body.fronttext) {
+      let deck = db.collection('decks');
+
+      let cardObj = {
+        title: req.body.title,
+        backtext: req.body.backtext,
+        fronttext: req.body.fronttext
+      }
+
+      deck.findOneAndUpdate(
+        { decktitle: req.body.decktitle },
+        { $push: { cards: cardObj }}
+      ).then(result => {
+        console.log("== Flash Card added successfully")
+        res.status(200).send("Flash Card added successfully");
+      }).catch(error => console.error(error));
+    }
+  });
+
   app.post('/decks/newdeck', function (req, res, next) {
     if (req.body && req.body.deckdesc && req.body.decktitle && req.body.deckauthor) {
       let deck = db.collection('decks');

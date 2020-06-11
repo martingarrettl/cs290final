@@ -1,10 +1,10 @@
-<main class="m-2 bg-light w-50">
+<main class="m-2 bg-light rounded p-2 w-50">
   <div class="deckinfo">
     <h3>{{decktitle}}</h3>
     <p class="deckauthor">by {{deckauthor}}</p>
     <p class="deckdesc">{{deckdesc}}</p>
   </div>
-  <div class="flashcards">
+  <div class="flashcards d-flex flex-wrap justify-content-center">
     {{#each cards}}
       {{> cards}}
     {{/each}}

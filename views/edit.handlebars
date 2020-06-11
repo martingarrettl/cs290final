@@ -1,15 +1,15 @@
-<div class="m-2">
+<div class="edit bg-light m-2 p-2 rounded w-50">
   <h3 id="decktitle">{{decktitle}}</h3>
 
-  <div class="input-element">
-    <label for="input-element">Description</label>
+  <div class="input-element w-50">
+    <label for="input-element"><h5>Description</h5></label>
     <textarea type="text" id="deckdesc" class="deckdesc">{{deckdesc}}</textarea>
   </div>
 
 <!-- Deck Related buttons  -->
   <div class="deck-buttons">
 
-    <button type="button" id="addFlashCard" class="btn btn-primary" data-toggle="modal" data-target="#create-flashcard-modal">
+    <button type="button" id="addFlashCard" class="btn btn-warning text-white" data-toggle="modal" data-target="#create-flashcard-modal">
       <i class="fas fa-plus"> Flash Card</i>
     </button>
 
@@ -18,43 +18,46 @@
     </button>
 
     <button type="button" id="deckdelete" class="btn btn-danger ml-2">
-      <i class="fas fa-times"> Delete Card</i>
+      <i class="fas fa-times"> Delete Deck</i>
     </button>
 
   </div>
+</div>
 
 <!-- add flash card modal -->
-  <div class="modal fade" id="create-flashcard-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Flash Card</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="modal fade" id="create-flashcard-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Flash Card</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="input-element">
+          <label for="fctitle">Card Title</label>
+          <textarea type="text" id="fctitle" class="fc-fronttext"></textarea>
         </div>
 
-        <div class="modal-body">
-
-          <div class="input-element">
-            <label for="input-element">Font Text</label>
-            <textarea type="text" id="input-element" class="fc-fronttext"></textarea>
-          </div>
-
-          <div class="input-element">
-            <label for="input-element">Back Text</label>
-            <textarea type="text" id="input-element" class="fc-backtext"></textarea>
-          </div>
-
+        <div class="input-element">
+          <label for="fronttext">Font Text</label>
+          <textarea type="text" id="fronttext" class="fc-fronttext"></textarea>
         </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" id="createDeck" class="btn btn-primary">Save</button>
+        <div class="input-element">
+          <label for="backtext">Back Text</label>
+          <textarea type="text" id="backtext" class="fc-backtext"></textarea>
         </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="createFlashCard" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
-
-
 </div>
